@@ -89,7 +89,7 @@ int toBinary(va_list args)
 }
 
 /**
-  * printUnsignDigit - handle the identifer of digits
+  * printUnsignDigit - handle the identifer of unsigned digits
   * @args: argument.
   *
   * Return: char counts.
@@ -105,6 +105,72 @@ int printUnsignDigit(va_list args)
 		num = num + 4294967296;
 	}
 	sprintf(buffer, "%ld", num);
+	str = buffer;
+	while (*str)
+	{
+		char_count += putchar(*str);
+		str++;
+	}
+	return (char_count);
+}
+
+/**
+  * print_octal - handle the identifer of octal nums
+  * @args: argument.
+  *
+  * Return: char counts.
+  */
+int print_octal(va_list args)
+{
+	int char_count = 0;
+	char buffer[12], *str;
+	unsigned int num = va_arg(args, int);
+
+	sprintf(buffer, "%o", num);
+	str = buffer;
+	while (*str)
+	{
+		char_count += putchar(*str);
+		str++;
+	}
+	return (char_count);
+}
+
+/**
+  * print_hex - handle the identifer of hex
+  * @args: argument.
+  *
+  * Return: char counts.
+  */
+int print_hex(va_list args)
+{
+	int char_count = 0;
+	char buffer[12], *str;
+	unsigned int num = va_arg(args, int);
+
+	sprintf(buffer, "%x", num);
+	str = buffer;
+	while (*str)
+	{
+		char_count += putchar(*str);
+		str++;
+	}
+	return (char_count);
+}
+
+/**
+  * printHex - handle the identifer of hex
+  * @args: argument.
+  *
+  * Return: char counts.
+  */
+int printHex(va_list args)
+{
+	int char_count = 0;
+	char buffer[12], *str;
+	unsigned int num = va_arg(args, int);
+
+	sprintf(buffer, "%X", num);
 	str = buffer;
 	while (*str)
 	{

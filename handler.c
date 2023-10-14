@@ -29,6 +29,15 @@ int handler(char c, va_list args)
 		case 'u':
 			char_count += printUnsignDigit(args);
 			break;
+		case 'o':
+			char_count += print_octal(args);
+			break;
+		case 'x':
+			char_count += print_hex(args);
+			break;
+		case 'X':
+			char_count += printHex(args);
+			break;
 		case '%':
 			char_count += putchar('%');
 			break;
