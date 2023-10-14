@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-  * _printf - produces output according to a format.
-  * @format: the format to print the output.
-  *
-  * Return: the number of characters printed
-  */
+ * _printf - produces output according to a format.
+ * @format: the format to print the output.
+ *
+ * Return: the number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	int char_count = 0;
