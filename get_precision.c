@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_precision - Calculates the precision for printing function .
+ * get_precision - Calculates the precision for printing
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  * @list: list of arguments.
@@ -10,30 +10,24 @@
  */
 int get_precision(const char *format, int *i, va_list list)
 {
-	int cur_i = *i + 1;  
+	int curr_i = *i + 1;
 	int precision = -1;
 
-	if (format[cur_i] != '.')
+	if (format[curr_i] != '.')
 		return (precision);
-
-	/*
-	 * The function then iterates through the characters in the format string starting from curr_i + 1. 
-	 * It checks each character to determine if it's a digit (0-9) or an asterisk ('*').
-	 */
-
 
 	precision = 0;
 
-	for (cur_i += 1; format[cur_i] != '\0'; cur_i++)
+	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
 	{
-		if (is_digit(format[cur_i]))
+		if (is_digit(format[curr_i]))
 		{
 			precision *= 10;
-			precision += format[cur_i] - '0';
+			precision += format[curr_i] - '0';
 		}
-		else if (format[cur_i] == '*')
+		else if (format[curr_i] == '*')
 		{
-			cur_i++;
+			curr_i++;
 			precision = va_arg(list, int);
 			break;
 		}
@@ -41,7 +35,7 @@ int get_precision(const char *format, int *i, va_list list)
 			break;
 	}
 
-	*i = cur_i - 1;
+	*i = curr_i - 1;
 
 	return (precision);
 }
