@@ -6,9 +6,9 @@
  *
  * Return: 1 if c is printable, 0 otherwise
  */
-int is_printable(char c)
+int is_printable(char ch)
 {
-	if (c >= 32 && c < 127)
+	if (ch >= 32 && ch < 127)
 		return (1);
 
 	return (0);
@@ -24,7 +24,7 @@ int is_printable(char c)
 int append_hexa_code(char ascii_code, char buffer[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
-	/* The hexa format code is always 2 digits long */
+	/* The hexa format code is always 2 digits long number */
 	if (ascii_code < 0)
 		ascii_code *= -1;
 
@@ -38,10 +38,10 @@ int append_hexa_code(char ascii_code, char buffer[], int i)
 }
 
 /**
- * is_digit - Verifies if a char is a digit
- * @c: Char to be evaluated
+ * is_digit - Verifies if a char is a digit .
+ * @c: Char to be evaluated .
  *
- * Return: 1 if c is a digit, 0 otherwise
+ * Return: 1 if c is a digit, 0 otherwise .
  */
 int is_digit(char c)
 {
